@@ -8,6 +8,6 @@
       "jquery-3.1.0.min.js",
       "content.js"
     ],
-    "matches": ["http://123movies.net/"]
+    "matches": ["http://123movies.net/*"]
   }]
 }
