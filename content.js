@@ -27,13 +27,10 @@ function getMovieYearFromAnchorTag(movieAnchorTag) {
 function addMovieRating(movieName, movieYear, index) {
   var API = "http://www.omdbapi.com/";
   var URL = API + "?t=" + encodeURIComponent(movieName) + (movieYear? "&y=" + movieYear : "");
+
   $.getJSON(URL, function(response) {
-    if (response.Response === "False") {
-      var rating = "N/A";
-    }
-    else {
-      var rating = response["imdbRating"];
-    }
+    if (response.Response === "False") { var rating = "N/A"; }
+    else { var rating = response["imdbRating"]; }
 
     $("span.mli-info:eq(" + index + ") h2").after("<h2>Rating: " + rating + "</h2>");
 
